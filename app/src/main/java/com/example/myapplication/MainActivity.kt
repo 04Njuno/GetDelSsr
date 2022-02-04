@@ -4,24 +4,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.ui.MainViewModel
 import com.example.myapplication.util.addTo
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainViewModel
     private val disposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        binding.viewModel = viewModel
         requestCameraPermission()
         observeEvent()
-
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
     }
 
     private fun requestCameraPermission() {
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
                 viewModel.usersEvent.set(it.result.toString())
+                Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
             }
             .addTo(disposable)
 

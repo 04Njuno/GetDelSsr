@@ -31,7 +31,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun deleteIssue() {
-        farmIssueRepository.deleteFarmIssue(DeleteIssue(editNum = "" , editAddress = "", imgUrl= ""))
+        farmIssueRepository.deleteFarmIssue(DeleteIssue(editNum = "hello" , editAddress = "hi", imgUrl= "good"))
             .subscribe { result ->
                 itemEventRelay.accept(AddSuccessEvent(result))
             }

@@ -7,6 +7,6 @@ class IssuesResponse {
     @SerializedName("success")
     val success: Boolean = false
 
-    @SerializedName("users")
+    @SerializedName("IssueList")
     val farmIssues: List<FarmIssue> = emptyList()
 }
