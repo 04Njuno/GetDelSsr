@@ -19,22 +19,17 @@ class RecyclerViewAdapter(private val farmIssueList: List<FarmIssue>, val contex
         return CustomViewHolder(view)
     }
 
-
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.editAddress.text = farmIssueList[position].editAddress
-        holder.editNum.text = farmIssueList[position].editNum
-        holder.imgUri.text = farmIssueList[position].imgUrl
+        holder.getList.text = farmIssueList[position].toString()
+
     }
 
     override fun getItemCount(): Int {
         return farmIssueList.size
     }
 
-
     inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val editAddress: TextView = itemView.findViewById(R.id.editAddress)
-        val editNum: TextView = itemView.findViewById(R.id.editNum)
-        val imgUri: TextView = itemView.findViewById(R.id.imgUrl)
+        val getList: TextView = itemView.findViewById(R.id.getList)
     }
 
     }

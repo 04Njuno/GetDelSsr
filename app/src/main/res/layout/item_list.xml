@@ -3,33 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="70dp"
     android:layout_marginTop="30dp"
     >
 
     <TextView
-        android:id="@+id/editAddress"
+        android:id="@+id/getList"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/editNum"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/editNum"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/imgUrl"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/imgUrl"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
         tools:layout_editor_absoluteX="0dp" />
 
 
