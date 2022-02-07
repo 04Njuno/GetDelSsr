@@ -1,6 +1,5 @@
 package com.example.myapplication.ui
 
-import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.model.DeleteIssue
 import com.example.myapplication.model.FarmIssue
@@ -18,8 +17,6 @@ class MainViewModel : ViewModel() {
     private val farmIssueRepository = FarmIssueRemoteRepo.getInstance()
     private val disposables = CompositeDisposable()
 
-    val usersEvent = ObservableField("")
-
     val itemEventRelay: Relay<RxAction> = PublishRelay.create()
 
     fun loadIssues() {
@@ -31,7 +28,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun deleteIssue() {
-        farmIssueRepository.deleteFarmIssue(DeleteIssue(editNum = "hello" , editAddress = "hi", imgUrl= "good"))
+        farmIssueRepository.deleteFarmIssue(DeleteIssue(editNum = "" , editAddress = "", imgUrl= ""))
             .subscribe { result ->
                 itemEventRelay.accept(AddSuccessEvent(result))
             }
@@ -45,4 +42,5 @@ class MainViewModel : ViewModel() {
 
     class UsersEvent(val result: List<FarmIssue>) : RxAction
     class AddSuccessEvent(val isSuccess: Boolean) : RxAction
+
 }

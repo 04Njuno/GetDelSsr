@@ -1,7 +1,6 @@
 package com.example.myapplication.network
 
 import com.example.myapplication.model.DeleteIssue
-import com.example.myapplication.model.FarmIssue
 import com.example.myapplication.network.response.DefaultResponse
 import com.example.myapplication.network.response.IssuesResponse
 import io.reactivex.Single
