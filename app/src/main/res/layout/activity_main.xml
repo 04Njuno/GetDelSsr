@@ -33,6 +33,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             tools:listitem="@layout/item_list" />
+        //recyclerView 사용해서 사용자 정보 UI에 표시
 
         <Button
             android:id="@+id/btnForGet"
