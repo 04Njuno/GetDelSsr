@@ -10,9 +10,6 @@ import com.jakewharton.rxrelay2.PublishRelay
 import com.jakewharton.rxrelay2.Relay
 import io.reactivex.disposables.CompositeDisposable
 
-/**
- * @author MyeongKi
- */
 class MainViewModel : ViewModel() {
     private val farmIssueRepository = FarmIssueRemoteRepo.getInstance()
     private val disposables = CompositeDisposable()
