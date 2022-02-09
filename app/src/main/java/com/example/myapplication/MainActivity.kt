@@ -32,13 +32,6 @@ class MainActivity : AppCompatActivity() {
         observeEvent()
     }
 
-    private fun requestPermission() {
-        val permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
-            Toast.makeText(this, "ok $it", Toast.LENGTH_SHORT).show()
-        }
-        permissionLauncher.launch(android.Manifest.permission.INTERNET)
-    }
-
     private fun observeEvent() {
         viewModel.itemEventRelay
             .ofType(MainViewModel.UsersEvent::class.java)
@@ -68,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         binding.rvUsers.layoutManager = layoutManager
         binding.rvUsers.adapter = recyclerViewAdapter
-    }
+    } //recyclerView와 layoutManger 연결 , UI 속 recyclerView에 사용자 리스트(usersEvent) 연결
 
 
 
