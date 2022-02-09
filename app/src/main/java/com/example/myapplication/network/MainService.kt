@@ -18,3 +18,4 @@ interface MainService {
         @Body deleteIssue: DeleteIssue
     ) : Single<DefaultResponse>
 }
+//소비자 정보 삭제, 불러오기 API 구현
